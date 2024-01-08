@@ -19,8 +19,8 @@ function Cart() {
     totalQuantities,
     cartItems,
     setShowCart,
-    //toggleCartItemQuanitity,
-    //onRemove,
+    toggleCartItemQuantity,
+    onRemove,
   } = useStateContext();
 
   return (
@@ -57,6 +57,7 @@ function Cart() {
             cartItems.map((item) => (
               <div className='product' key={item._id}>
                 <img
+                  alt='iamge'
                   src={urlFor(item?.image[0])}
                   className='cart-product-image'
                 />
@@ -71,7 +72,7 @@ function Cart() {
                         <span
                           className='minus'
                           onClick={() =>
-                            toggleCartItemQuanitity(item._id, 'dec')
+                            toggleCartItemQuantity(item._id, 'dec')
                           }
                         >
                           <AiOutlineMinus />
@@ -82,7 +83,7 @@ function Cart() {
                         <span
                           className='plus'
                           onClick={() =>
-                            toggleCartItemQuanitity(item._id, 'inc')
+                            toggleCartItemQuantity(item._id, 'inc')
                           }
                         >
                           <AiOutlinePlus />
